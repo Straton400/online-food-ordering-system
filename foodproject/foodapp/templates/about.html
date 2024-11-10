@@ -1,0 +1,83 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Header Section -->
+<header class="bg-dark text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">About Us</h1> 
+        <p class="lead">Your satisfaction is our priority. Discover more about our journey, mission, and team.</p>
+    </div>
+</header>
+
+<!-- Our Mission Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{% static 'images/image1.jpg' %}" alt="Our Mission" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="h3">Our Mission</h2>
+                <p>At <strong>Online Food ordering</strong>, our mission is to bring delicious food from the best restaurants straight to your door, quickly and easily. We strive to provide a seamless experience from the moment you place your order to the moment it arrives.</p>
+                <p>We believe in supporting local restaurants and providing our customers with a wide variety of choices, all while ensuring the highest standards of food quality and service.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meet the Team Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center h3">Meet the Team</h2>
+        <div class="row mt-4">
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/image2.jpg' %}" alt="Team Member 1" class="img-fluid rounded-circle mb-3" width="150" height="150">
+                <h4>Straton Tarimo</h4>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/image3.jpg' %}" alt="Team Member 2" class="img-fluid rounded-circle mb-3" width="150" height="150">
+                <h4>Albert Tarimo</h4>
+                <p>Head of Operations</p>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<!-- Customer Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center h3">What Our Customers Say</h2>
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded">
+                    <p class="font-italic">"The best food delivery service I've ever used! The food always arrives hot and on time."</p>
+                    <p class="font-weight-bold">- Alex Brown</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded">
+                    <p class="font-italic">"Amazing selection of restaurants and super easy to use. Highly recommend!"</p>
+                    <p class="font-weight-bold">- Sarah White</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded">
+                    <p class="font-italic">"Great customer service and the food quality is top-notch. Love it!"</p>
+                    <p class="font-weight-bold">- Michael Green</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p class="mb-0">&copy; 2024 Online FoodOdering. All Rights Reserved.</p>
+    </div>
+</footer>
+
+{% endblock content %}

@@ -13,12 +13,33 @@ welcome to home page
         <p>Order your favourity food and drinks now </p>
     </div>
 </section> 
+   
 
 
 
-
-
-
+<div class="container-fluid my-4">
+    <div class="row">
+        {% for menu in menus %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            
+            <div class="card h-100">
+                <img src="{{ menu.image.url }}" class="card-img-top" alt="{{ menu.name }}">
+                <div class="card-body">
+                    <h5 class="card-name">name    :{{ menu.name }}   </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">price      :${{ menu.price }}</h6>
+                    <p class="card-text">description     :{{ menu.discription }}</p>
+                    <br> ID : {{menu.id}}
+                </div> 
+                <div class="card-footer">
+                    <a href="{% url 'details' menu.id %}">
+                        <button class="btn btn-primary">Order Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 
 <footer class="bg-dark text-white py-4">

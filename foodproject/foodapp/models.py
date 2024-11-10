@@ -11,22 +11,27 @@ class customer(models.Model):
     
     def __str__(self):
         return f"{self.username} - {self.email} - {self.phone} - {self.password}"
+
+class categories(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
     
 class menu(models.Model):
-    name = models.CharField(max_length=100)
-    discription = models.CharField(max_length=200)
-    category = models.CharField(max_length=100)
+    categories = models.ForeignKey(categories, related_name='menu', on_delete=models.CASCADE)
+    name = models.CharField(max_length=222)
+    discription = models.TextField(blank=True, null=True)
+    price = models.FloatField()
+    image = models.ImageField(upload_to='menu-images', blank=True, null=True)
+    is_available = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     
-class menu_item(models.Model):
-    menu_id = models.ForeignKey(menu, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    discription = models.CharField(max_length=200)
-    price = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="menu_images", blank=True, null=True)
-    
-class orders(models.Model):
-    customer_id = models.ForeignKey(customer,on_delete=models.CASCADE )
-    total_price = models.CharField(max_length=200)
-    order_date = models.DateField 
-    status = models.CharField (max_length=100)    
+   
+    def __str__(self):
+        return f"{self.categories} - {self.name} - {self.discription}- {self.image} - {self.price}"
+
+
+ 
+

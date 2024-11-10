@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,9 @@
      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/.css' %}">
+   
+    
     <title>
     {% block title %}
         online food ordering system
@@ -16,7 +19,7 @@
            m</title>
 </head>
 <body>
-    <div class="">
+    <div class="maini">
 
       
     <!-- Header Section -->
@@ -33,13 +36,13 @@
                             <a class="nav-link active" aria-current="page" href= "{% url 'home'%}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Menu</a>
+                            <a class="nav-link active" href="{% url 'menu_list' %}">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="">About Us</a>
+                            <a class="nav-link active" href="{% url 'about'%}">About Us</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'regester'%}">regester</a>
+                            <a class="nav-link" href="{% url 'regester2'%}">regester</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{%url 'login'%}">Login</a>
